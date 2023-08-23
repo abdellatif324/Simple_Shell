@@ -206,23 +206,13 @@ typedef struct builtin
 } builtin_table;
 
 void _puts(char *str);
-#ifndef SHELL_H
-#define SHELL_H
+
 
 /**this part add*/
-
+/*part ad*/
 void _puts(char *str);
-#ifndef SHELL_H
-#define SHELL_H
-
-/* Other function prototypes and declarations */
+int _setenv_var(info_t *info, const char *name, const char *value);
 char *_getenv(info_t *info, const char *name);
-
-#endif /* SHELL_H */
-
-/* Other function prototypes and declarations */
-
-#endif /* SHELL_H */
 
 /* toem_shloop.c */
 

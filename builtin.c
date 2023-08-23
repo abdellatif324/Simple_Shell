@@ -39,7 +39,7 @@ int _exit_shell(info_t *info)
 int _changes_directory(info_t *info)
 {
 	char *s, *dir, buffer[1024];
-	int changes_dr_rt;
+	int chdir_ret;
 
 	s = getcwd(buffer, 1024);
 
