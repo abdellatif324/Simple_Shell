@@ -50,8 +50,9 @@ char **list_to(list_t *head)
 			free(strs);
 			return (NULL);
 		}
-
-		str = _strcpy(str, node->str);
+		
+		_strncpy(str, node->str, some_max_length);
+		str[some_max_length] = '\0';
 		strs[a] = str;
 	}
 

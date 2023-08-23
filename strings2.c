@@ -6,7 +6,7 @@
  *
  * Return: pointer to destination
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy2(char *dest, char *src)
 {
         int a = 0;
         if (dest == src || src == 0)

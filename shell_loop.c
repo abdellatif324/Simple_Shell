@@ -15,10 +15,10 @@ int hsh(info_t *info, char **a)
 	while (r != -1 && builtin_ret != -2)
 	{
 		clear_info(info);
-		if (interactive(info))
+		if (reactive(info))
 			_puts("$ ");
 		_eputchar(BUF_FLUSH);
-		r = get_input(inf);
+		r = get_input(info);
 		if (r != -1)
 		{
 			set_info(info, a);
@@ -26,13 +26,13 @@ int hsh(info_t *info, char **a)
 			if (builtin_ret == -1)
 				find_cmd(info);
 		}
-		else if (interactive(info))
+		else if (reactive(info))
 			_putchar('\n');
 		free_info(info, 0);
 	}
 	write_history(info);
-	free_info(inf, 1);
-	if (!interactive(info) && inf->status)
+	free_info(info, 1);
+	if (!reactive(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
 	{
@@ -56,12 +56,12 @@ int find_builtin(info_t *info)
 {
 	int a, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-		{"exit", _myexit},
+		{"exit", _exit_shell},
 		{"env", _myenv},
 		{"help", _myhelp},
 		{"history", _myhistory},
 		{"setenv", _mysetenv},
-		{"unsetenv", _myunsetenv},
+		{"unsetenv", _mysetenv},
 		{"cd", _mycd},
 		{"alias", _myalias},
 		{NULL, NULL}
@@ -108,7 +108,7 @@ void is_cmd(info_t *info)
 	}
 	else
 	{
-		if ((interactive(info) || _getenv(info, "PATH=")
+		if ((reactive(info) || _getenv(info, "PATH=")
 					|| info->argv[0][0] == '/') && _cmd(info, info->argv[0]))
 			fork_cmd(info);
 		else if (*(info->arg) != '\n')

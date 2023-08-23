@@ -29,8 +29,8 @@ int _sets_string(info_t *info, char *str)
 		return (1);
 	c = *p;
 	*p = 0;
-	ret = delete_node_at_index(&(info->alias),
-		get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
+	ret = delete_node_at(&(info->alias),
+		get_node_inde(info->alias, node_starts(info->alias, str, -1)));
 	*p = c;
 	return (ret);
 }
@@ -108,7 +108,7 @@ int _mimics_alias(info_t *info)
 		if (p)
 			alias_string(info, info->argv[i]);
 		else
-			alias_string_print(node_starts_with(info->alias, info->argv[i], '='));
+			alias_string_print(node_starts(info->alias, info->argv[i], '='));
 	}
 
 	return (0);

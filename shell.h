@@ -216,8 +216,22 @@ int _setenv_var(info_t *info, const char *name, const char *value);
 char *_getenv(info_t *info, const char *name);
 int _setenv_var2(info_t *info, char *var, char *value);
 int build_history_linked_list(info_t *info, char *buf, int linecount);
+char **list_to_strings(list_t *list);
+int some_max_length = 100;
 
+int _myenv(info_t *info);
+int _myhelp(info_t *info);
 
+int _myhistory(info_t *info);
+int _mysetenv(info_t *info);
+int _mycd(info_t *info);
+int _myalias(info_t *info);
+
+int is_delim(char c, const char *delims);
+char *find_path(info_t *info, const char *path_str, const char *command);
+char *_strcpy2(char *dest, char *src);
+/*char *_strcpy(char *dest, const char *src);
+*/
 /* toem_shloop.c */
 
 
