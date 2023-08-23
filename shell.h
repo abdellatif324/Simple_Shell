@@ -228,11 +228,11 @@ void fork_cmd(info_t *);
 
 /* toem_parser.c */
 
-int is_cmd(info_t *, char *);
+int _cmd(info_t *, char *);
 
-char *dup_chars(char *, int, int);
+char *_chars(char *, int, int);
 
-char *find_path(info_t *, char *, char *);
+char *_path(info_t *, char *, char *);
 
 
 /* loophsh.c */
@@ -288,14 +288,14 @@ char **strtow2(char *, char);
 
 char *_memset(char *, char, unsigned int);
 
-void ffree(char **);
+void fffree(char **);
 
 void *_realloc(void *, unsigned int, unsigned int);
 
 
 /* toem_memory.c */
 
-int bfree(void **);
+int beffur_free(void **);
 
 
 /* toem_atoi.c */
@@ -408,13 +408,13 @@ void free_list(list_t **);
 
 size_t list_len(const list_t *);
 
-char **list_to_strings(list_t *);
+char **list_to(list_t *);
 
-size_t print_list(const list_t *);
+size_t print_lists(const list_t *);
 
-list_t *node_starts_with(list_t *, char *, char);
+list_t *node_starts(list_t *, char *, char);
 
-ssize_t get_node_index(list_t *, list_t *);
+ssize_t get_node_inde(list_t *, list_t *);
 
 
 /* toem_vars.c */
