@@ -230,6 +230,10 @@ int _myalias(info_t *info);
 int is_delim(char c, const char *delims);
 char *find_path(info_t *info, const char *path_str, const char *command);
 char *_strcpy2(char *dest, char *src);
+void replace_vars(info_t *info);
+void check_chain(info_t *info, char *buf, size_t *j, size_t i, size_t len);
+list_t *node_starts_with(list_t *head, char *str, char delimiter);
+
 /*char *_strcpy(char *dest, const char *src);
 */
 /* toem_shloop.c */
