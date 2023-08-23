@@ -209,10 +209,14 @@ void _puts(char *str);
 
 
 /**this part add*/
-/*part ad*/
+/*part ad again*/
+#include <string.h>
 void _puts(char *str);
 int _setenv_var(info_t *info, const char *name, const char *value);
 char *_getenv(info_t *info, const char *name);
+int _setenv_var2(info_t *info, char *var, char *value);
+int build_history_linked_list(info_t *info, char *buf, int linecount);
+
 
 /* toem_shloop.c */
 
